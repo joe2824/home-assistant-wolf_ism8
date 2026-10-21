@@ -111,9 +111,15 @@ class WolfProgramSelect(WolfEntity, SelectEntity):
 
     async def async_added_to_hass(self) -> None:
         """Register callbacks for all 3 datapoints which may affect this entity."""
-        self._ism8.register_callback(self.async_write_ha_state, self.dp_nbr)
+        await super().async_added_to_hass()
         self._ism8.register_callback(self.async_write_ha_state, self.dp_nbr + 1)
         self._ism8.register_callback(self.async_write_ha_state, self.dp_nbr + 2)
+
+    async def async_will_remove_from_hass(self) -> None:
+        """Un-register all 3 callbacks registered in async_added_to_hass."""
+        await super().async_will_remove_from_hass()
+        self._ism8.remove_callback(self.dp_nbr + 1)
+        self._ism8.remove_callback(self.dp_nbr + 2)
 
     async def async_select_option(self, option: str) -> None:
         """Change the selected option."""
