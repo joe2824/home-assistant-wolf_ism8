@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.core import callback
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
-from wolf_ism8 import Ism8
+from .ism8lib import Ism8
 
 from .const import CONF_FW_VERSION
 from .const import DOMAIN

@@ -11,7 +11,7 @@ from homeassistant.const import UnitOfVolumeFlowRate
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from wolf_ism8 import Ism8
+from .ism8lib import Ism8
 
 from .const import SensorType
 from .wolf_entity import WolfEntity

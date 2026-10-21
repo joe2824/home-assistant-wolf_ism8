@@ -3,7 +3,7 @@ from homeassistant.components.binary_sensor import BinarySensorEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from wolf_ism8 import Ism8
+from .ism8lib import Ism8
 
 from .const import SensorType
 from .wolf_entity import WolfEntity

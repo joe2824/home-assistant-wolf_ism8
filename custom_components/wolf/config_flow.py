@@ -6,7 +6,7 @@ from homeassistant import config_entries
 from homeassistant.const import CONF_DEVICES
 from homeassistant.const import CONF_HOST
 from homeassistant.const import CONF_PORT
-from wolf_ism8 import Ism8
+from .ism8lib import Ism8
 
 from .const import CONF_SUPPRESS_UNSUPPORTED
 from .const import DEFAULT_HOST
